@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1447597053890
+Build-Jdk: 1.8.0_60
+Built-By: dgraf
+Bundle-ManifestVersion: 2
+Bundle-Name: iClip General Client Code
+Bundle-SymbolicName: com.iClip.iClip
+Bundle-Version: 1.0.0.SNAPSHOT
+Class-Path: lib/net.java.html-1.2.3.jar lib/net.java.html.json-1.2.3.jar
+  lib/net.java.html.boot-1.2.3.jar lib/net.java.html.sound-1.2.3.jar lib
+ /ko4j-1.2.3.jar lib/iClip-js-1.0-SNAPSHOT.jar
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.iClip.iClip;version="1.0.0.SNAPSHOT"
+Import-Package: net.java.html;version="[1.2,2)",net.java.html.boot;versi
+ on="[1.2,2)",org.netbeans.html.json.spi;version="[1.2,2)"
+Main-Class: com.iClip.iClip.Main
+Tool: Bnd-2.1.0.20130426-122213

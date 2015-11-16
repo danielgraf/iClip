@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1447346434284
+Build-Jdk: 1.8.0_60
+Built-By: dgraf
+Bundle-ManifestVersion: 2
+Bundle-Name: iClip JavaScript Libraries
+Bundle-SymbolicName: com.iClip.iClip.js
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.iClip.iClip.js;version="1.0.0.SNAPSHOT"
+Import-Package: org.netbeans.html.boot.spi;version="[1.2,2)"
+Tool: Bnd-2.1.0.20130426-122213

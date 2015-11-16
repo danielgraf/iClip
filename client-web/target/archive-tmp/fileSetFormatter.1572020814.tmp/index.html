@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="iClip">
+    <head>
+        <meta charset="utf-8">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="glyphicons/css/glyphicons-bootstrap.css" rel="stylesheet">
+        <link href="glyphicons/css/glyphicons-filetypes.css" rel="stylesheet">
+        <link href="glyphicons/css/glyphicons-halflings.css" rel="stylesheet">
+        <link href="glyphicons/css/glyphicons-social.css" rel="stylesheet">
+        <link href="glyphicons/css/glyphicons.css" rel="stylesheet">
+        <script src="jquery/jquery-2.1.3.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="angular/angular.min.js"></script>
+        <script src="js/iclip.js"></script>
+        <title></title>
+    </head>
+    <body ng-controller="iClipController">
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group" style="padding-top: 10px;">
+                        <li class="list-group-item">
+                            <img alt="logo" src="images/clipicon_inapp.png" height="32"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active"><a href="#wallet" role="tab" data-toggle="tab"><span class="glyphicons glyphicons-wallet"></span> My Coupons</a></li>
+                    <li role="presentation"><a href="#browse" role="tab" data-toggle="tab"><span class="glyphicons glyphicons-tags"></span> Browse Coupons</a></li>
+                    <li role="presentation"><a href="#settings" role="tab" data-toggle="tab"><span class="glyphicons glyphicons-settings"></span> Configure</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="wallet">
+                        <ul class="list-group"  style="padding-top: 10px;">
+                            <li class="list-group-item" ng-repeat="coupon in mycoupons">
+                                <img alt="couponlogo" ng-src="{{coupon.couponlogourl}}" height="64"/>
+                                <p class="h5">{{coupon.couponissuername}}</p>
+                                <p class="h3">{{coupon.couponoffer}}</p>
+                                <p class="h6"><small>Expiry {{coupon.couponexpiry}}</small> <a href="#" ng-click="deleteit(coupon)" class="danger pull right"><span class="glyphicons glyphicons-bin"></span></a></p>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="browse">
+                        <ul class="list-group"  style="padding-top: 10px;">
+                            <li class="list-group-item" ng-repeat="coupon in mycoupons | filter:filterAlreadyAdded()">
+                                <img alt="couponlogo" ng-src="{{coupon.couponlogourl}}" height="64"/>
+                                <p class="h5">{{coupon.couponissuername}}</p>
+                                <p class="h3">{{coupon.couponoffer}}</p>
+                                <p class="h6"><small>{{coupon.couponexpiry}}</small></p>
+                                <button ng-click="clipit(coupon)" class="btn btn-default"><span class="glyphicons glyphicons-wallet"></span> Clip it !</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="settings">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
